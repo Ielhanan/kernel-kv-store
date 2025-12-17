@@ -1,0 +1,1 @@
+savedcmd_/home/elhanan/.kernelKvStore/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/elhanan/.kernelKvStore/Module.symvers -T /home/elhanan/.kernelKvStore/modules.order -i Module.symvers -e 
