@@ -1,8 +1,14 @@
 obj-m += main.o
 
+KDIR ?= /lib/modules/$(shell uname -r)/build
+BUILD_DIR ?= $(PWD)/build
+
 all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+	mkdir -p $(BUILD_DIR)
+	cp Makefile $(BUILD_DIR)/Makefile
+	ln -sf $(PWD)/src/* $(BUILD_DIR)/
+	$(MAKE) -C $(KDIR) M=$(BUILD_DIR) modules
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean:
+	rm -rf $(BUILD_DIR)
 

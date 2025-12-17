@@ -12,3 +12,4 @@ Module.symvers
 
 # VS Code settings
 .vscode/
+build/
